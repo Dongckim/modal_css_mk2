@@ -2,9 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const BasicButton= ({ children, ...theme}) =>{
-    return(
-        <StButton theme={Object.keys(theme).join('')} >{children}</StButton>
-    )
+    return <StButton theme={Object.keys(theme)[0]} onClick = {theme.onClick}>{children}</StButton>
 }
 
 const StButton = styled.button`
@@ -15,7 +13,7 @@ const StButton = styled.button`
     border: 3px solid #15de9b;
     background-color: transparent;
     ${({theme}) => {
-    switch (theme){
+    switch (theme) {
       case 'LargePrime':
         return css`
           cursor : pointer;
@@ -74,4 +72,4 @@ const StButton = styled.button`
   }}
 `
 
-export default BasicButton
+export default BasicButton;

@@ -1,22 +1,32 @@
-import React from "react";
+import React, { createContext, useRef } from "react";
 import styled from "styled-components";
 import BasicButton from "./components/BasicButton";
+import { TfiAngleRight } from "react-icons/tfi"
+import { VscBellDot } from "react-icons/vsc"
+import Input from "./components/Input";
+import { onSubmitHandler } from "./fuction";
+
+export const InputContext = createContext();
 
 function App(){
-
   return (
     <>
-      <Wrapper>
-        <BasicButton LargePrime>Large Prime Button</BasicButton>
-        <BasicButton NormalMedium>Medium</BasicButton>
-        <BasicButton NormalSmall>Medium</BasicButton>
-      </Wrapper>
-      <br/>
-      <Wrapper>
-        <BasicButton LargeNegative>Large Negative Button</BasicButton>
-        <BasicButton NegativeMedium>Medium</BasicButton>
-        <BasicButton NegativeSmall>Medium</BasicButton>
-      </Wrapper>
+      <h1>Button</h1>
+        <Wrapper>
+          <BasicButton LargePrime onClick ={()=>{alert('버튼을 클릭하셨습니다')}}>Large Prime Button <TfiAngleRight/></BasicButton>
+          <BasicButton NormalMedium>Medium</BasicButton>
+          <BasicButton NormalSmall>Small</BasicButton>
+        </Wrapper>
+        <br/>
+        <Wrapper>
+          <BasicButton LargeNegative onClick={()=>{prompt('어렵나요?')}}>Large Negative Button <VscBellDot/></BasicButton>
+          <BasicButton NegativeMedium>Medium</BasicButton>
+          <BasicButton NegativeSmall>Small</BasicButton>
+        </Wrapper>
+      <h1>Input</h1>
+        <Input/>
+      <h1>Modal</h1>
+        
     </>
   )
 }
