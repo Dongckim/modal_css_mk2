@@ -5,6 +5,8 @@ import { TfiAngleRight } from "react-icons/tfi"
 import { VscBellDot } from "react-icons/vsc"
 import Input from "./components/Input";
 import { onSubmitHandler } from "./fuction";
+import Modal from "./components/Modal";
+import Select from "./components/Select";
 
 export const InputContext = createContext();
 
@@ -26,7 +28,9 @@ function App(){
       <h1>Input</h1>
         <Input/>
       <h1>Modal</h1>
-        
+        <Modal/>
+      <h1>Select</h1>
+        <Select/>
     </>
   )
 }
